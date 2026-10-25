@@ -1,0 +1,30 @@
+{
+  "namespace": "host",
+  "seed": 17,
+  "relations": {
+    "FILE_OPENED": 1,
+    "FILE_READ": 2,
+    "FILE_WRITTEN": 3,
+    "NETFLOW_CONNECTED": 4,
+    "NETFLOW_PACKET_RECEIVED": 5,
+    "NETFLOW_PACKET_SENT": 6,
+    "PROCESS_EXECUTED": 7
+  },
+  "splits": {
+    "train": [],
+    "validation": [],
+    "test": []
+  },
+  "future_weight": 0.2,
+  "transition_weight": 0.25,
+  "transition_cap": 4.0,
+  "semantic_weight": 0.25,
+  "gap_weight": 0.1,
+  "alert_quantile": 0.99,
+  "training": {
+    "local": {"epochs": 3, "batch_size": 2048, "learning_rate": 0.001},
+    "adm_initialization": {"epochs": 3, "batch_size": 2048, "learning_rate": 0.0005},
+    "adm_finetuning": {"epochs": 3, "batch_size": 2048, "learning_rate": 0.0003},
+    "eid": {"epochs": 3, "batch_size": 128, "bptt_events": 128, "learning_rate": 0.0005}
+  }
+}
